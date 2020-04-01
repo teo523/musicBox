@@ -98,7 +98,7 @@ function setup() {
   createCanvas(640, 480); // we need some space...
 
   // load test video file
-  myVideo = createVideo(['videoplayback.mp4']);
+  myVideo = createVideo(['stars.mp4']);
   // workaround for browser autoplay restrictions
   myVideo.elt.muted = true;
   // fix for some mobile browsers
