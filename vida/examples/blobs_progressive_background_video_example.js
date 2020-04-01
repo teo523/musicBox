@@ -182,12 +182,12 @@ function setup() {
   */
   myVida.pointsPerApproximatedBlobPolygon = 8;
 
-  myVida.normMinBlobMass = 0.000002; myVida.normMaxBlobMass = 0.05;
+  myVida.normMinBlobMass = 0.000002; myVida.normMaxBlobMass = 0.0005;
   /*
     Normalized values of parameters defining the smallest and highest allowable
     area (of the bounding box) of the blob.
   */
-  myVida.normMinBlobArea = 0.000002; myVida.normMaxBlobArea = 0.05;
+  myVida.normMinBlobArea = 0.000002; myVida.normMaxBlobArea = 0.0005;
 
   frameRate(30); // set framerate
 }
