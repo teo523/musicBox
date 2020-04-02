@@ -119,7 +119,7 @@ function setup() {
 
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
-  myVideo.elt.muted = true;
+  //myVideo.elt.muted = true;
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
@@ -205,7 +205,7 @@ function setup() {
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
     */
-    osc.freq(440.0 * Math.pow(2.0, (60 + (i * 4) - 69.0) / 12.0));
+    osc.freq(110.0 * Math.pow(2.0, (60 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
     synth[i] = osc;
   }
@@ -220,7 +220,7 @@ function gotFile(file) {
   myVideo = createVideo(file.data);
  myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
-  myVideo.elt.muted = true;
+  //myVideo.elt.muted = true;
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
