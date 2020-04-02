@@ -86,6 +86,9 @@
 var myVideo, // video file
     myVida;  // VIDA
 
+let linePoint1 = [];
+let linePoint2 = [];
+let gBool = 0;
 /*
   Some web browsers do not allow the automatic start of a video file and allow
   you to play the file only as a result of user interaction. Therefore, we will
@@ -182,12 +185,12 @@ function setup() {
   */
   myVida.pointsPerApproximatedBlobPolygon = 8;
 
-  myVida.normMinBlobMass = 0.000002; myVida.normMaxBlobMass = 0.0005;
+  myVida.normMinBlobMass = 0.000002; myVida.normMaxBlobMass = 0.005;
   /*
     Normalized values of parameters defining the smallest and highest allowable
     area (of the bounding box) of the blob.
   */
-  myVida.normMinBlobArea = 0.000002; myVida.normMaxBlobArea = 0.0005;
+  myVida.normMinBlobArea = 0.000002; myVida.normMaxBlobArea = 0.005;
 
   frameRate(30); // set framerate
 }
@@ -218,15 +221,15 @@ function draw() {
       of image transformations made by VIDA.
     */
     image(myVideo, 0, 0);
-    image(myVida.backgroundImage, 320, 0);
-    image(myVida.differenceImage, 0, 240);
-    image(myVida.thresholdImage, 320, 240);
+    //image(myVida.backgroundImage, 320, 0);
+    //image(myVida.differenceImage, 0, 240);
+    //image(myVida.thresholdImage, 320, 240);
     // let's also describe the displayed images
     noStroke(); fill(255, 255, 255);
-    text('raw video', 20, 20);
-    text('vida: progressive background image', 340, 20);
-    text('vida: difference image', 20, 260);
-    text('vida: threshold image', 340, 260);
+    //text('raw video', 20, 20);
+    //text('vida: progressive background image', 340, 20);
+    //text('vida: difference image', 20, 260);
+    //text('vida: threshold image', 340, 260);
     /*
       In this example, we use the built-in VIDA function for drawing blobs. We
       use the version of the function with two parameters (given in pixels)
@@ -238,7 +241,7 @@ function draw() {
       surface, use the function in this way:
         [your vida object].drawBlobs(0, 0, width, height);
     */
-    myVida.drawBlobs(320, 240);
+    myVida.drawBlobs(0, 0);
   }
   else {
     /*
@@ -248,6 +251,13 @@ function draw() {
     */
     background(255, 0, 0);
   }
+fill(255,230,0);
+stroke(255,0,0);
+strokeWeight(5);
+line(linePoint1[0],linePoint1[1],linePoint2[0],linePoint2[1]);
+
+ellipse(linePoint1[0],linePoint1[1],20,20);
+ellipse(linePoint2[0],linePoint2[1],20,20);
 }
 
 function touchEnded() {
@@ -277,4 +287,23 @@ function safeStartVideo() {
   catch(e) {
     console.log('[safeStartVideo] ' + e);
   }
+}
+
+function mouseClicked() {
+
+
+if(gBool){
+if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
+linePoint1[0] = mouseX;
+linePoint1[1] = mouseY;
+}}
+else {
+if (linePoint2[0] != mouseX || linePoint2[1] != mouseY ){
+linePoint2[0] = mouseX;
+linePoint2[1] = mouseY;
+}
+}
+
+gBool = 1 - gBool;
+
 }
