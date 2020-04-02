@@ -702,8 +702,10 @@ p5.prototype.Vida.prototype.drawActiveZones = function(_x, _y, _w, _h) {
     this.__sketch.strokeWeight(1);
     if(this.activeZones[i].isEnabledFlag) {
       this.__sketch.stroke(255, 0, 0);
-      if(this.activeZones[i].isMovementDetectedFlag)
+      if(this.activeZones[i].isMovementDetectedFlag){
         this.__sketch.fill(255, 0, 0, 128);
+      //modified for just draw activated zones
+      this.__sketch.ellipse(temp_coord_x, temp_coord_y, temp_coord_w, temp_coord_h);}
       else
         this.__sketch.noFill();
     }
@@ -719,16 +721,16 @@ p5.prototype.Vida.prototype.drawActiveZones = function(_x, _y, _w, _h) {
       else
         this.__sketch.noFill();
     }
-    this.__sketch.rect(temp_coord_x, temp_coord_y, temp_coord_w, temp_coord_h);
+    
     // print id
     this.__sketch.noStroke();
     if(this.activeZones[i].isEnabledFlag)
       this.__sketch.fill(255, 0, 0);
     else
       this.__sketch.fill(0, 0, 255);
-      this.__sketch.text(
+      /*this.__sketch.text(
         this.activeZones[i].id, temp_coord_x, temp_coord_y - 1
-      );
+      );*/
   }
   // restore drawing style and font
   this.__sketch.pop();
@@ -740,7 +742,7 @@ p5.prototype.Vida.prototype.drawActiveZones = function(_x, _y, _w, _h) {
 */
 p5.prototype.Vida.prototype.removeActiveZone = function(_id) {
   for(var i = this.activeZones.length - 1; i >= 0; i--) {
-    if(_id == this.activeZones[i].id) list.splice(i, 1);
+    if(_id == this.activeZones[i].id) this.activeZones.splice(i, 1);
   }
 }
 
