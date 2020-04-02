@@ -85,6 +85,7 @@
 
 var myVideo, // video file
     myVida;  // VIDA
+let dropzone;
 
 let linePoint1 = [100,100];
 let linePoint2 = [200,200];
@@ -95,6 +96,7 @@ let gBool = 0;
   use this variable to manage the start of the file after interacting with the
   user.
 */
+
 var interactionStartedFlag = false;
 
 /*
@@ -105,12 +107,17 @@ var interactionStartedFlag = false;
 var synth = [];
 
 function setup() {
-  createCanvas(640, 480); // we need some space...
-
+  c = createCanvas(windowWidth/2,windowHeight/2); // we need some space...
+  c.position(windowWidth/2 - width/2,100);
+  dropzone = select('#dropzone');
+  dropzone.position(windowWidth/2-dropzone.width/2,450);
+  dropzone.dragOver(highlight);
+  dropzone.dragLeave(unhighlight);
+  dropzone.drop(gotFile,unhighlight);
   // load test video file
   myVideo = createVideo(['stars.mp4']);
 
-  myVideo.size(640,480);
+  myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   myVideo.elt.muted = true;
   // fix for some mobile browsers
@@ -206,6 +213,35 @@ function setup() {
   frameRate(30); // set framerate
 }
 
+
+function gotFile(file) {
+  myVideo.stop();
+
+  myVideo = createVideo(file.data);
+ myVideo.size(windowWidth/2,windowHeight/2);
+  // workaround for browser autoplay restrictions
+  myVideo.elt.muted = true;
+  // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+  // loop the video, hide the original object and start the playback
+  myVideo.loop(); myVideo.hide();
+ // myVideo.loop();
+  //img.position(10,10);
+  //img.loop()
+  //img.elt.muted = true;
+}
+
+function highlight() {
+  fill(233,0,0);
+  dropzone.style('background','red');
+}
+
+
+function unhighlight() {
+  dropzone.style('background','#ccc');
+}
+
+
 function draw() {
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
@@ -254,8 +290,6 @@ function draw() {
     */
    
 
-    fill(200,0,0);
-    ellipse(100,100,100,30);
     //myVida.drawBlobs(0, 0);
     myVida.drawActiveZones(0, 0);
     fill(255,230,0);
