@@ -353,7 +353,7 @@ function draw() {
       return;
     }
     fill(255,0,0);
-    ellipse(200,20,30,100);
+    ellipse(20,20,30,100);
     if (startOsc == 0){
 
     var n = 20;
