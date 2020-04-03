@@ -355,7 +355,7 @@ function draw() {
 
     if (startOsc == 0){
     fill(255,0,0);
-    ellipse(20,20,20,20);
+    ellipse(200,20,30,100);
     var n = 20;
     startOsc = 1;
 
