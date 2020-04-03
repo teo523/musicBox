@@ -352,10 +352,10 @@ function draw() {
       pop();
       return;
     }
-
-    if (startOsc == 0){
     fill(255,0,0);
     ellipse(200,20,30,100);
+    if (startOsc == 0){
+
     var n = 20;
     startOsc = 1;
 
