@@ -86,6 +86,8 @@
 var myVideo, // video file
     myVida;  // VIDA
 let dropzone;
+let b3;
+let c;
 
 let linePoint1 = [100,100];
 let linePoint2 = [200,200];
@@ -108,17 +110,23 @@ var synth = [];
 
 function setup() {
   c = createCanvas(windowWidth/2,windowHeight/2); // we need some space...
-  b1 = createButton("Sky 1");
-  b1.position(windowWidth/20,100);
-  b1.size(100,100);
-  b1.style('border-color','black');
-  b1.style('padding','24px');
-  b1.style('background','white');
-  b2 = createButton("Sky 2");
-  b2.position(windowWidth/20,220);
-  b2.size(100,100);
+  p1 = createP("Other videos to try: ");
+  p1.style('width','130px');
+  p1.position(windowWidth/2 - c.width/2, 50);
+  p2 = createP("...or upload your own video below!");
+  b1 = select('#b1');
+  b1.position(windowWidth/2 - c.width/2 + p1.width, 50);
+  b2 = select('#b2');
+  b2.position(windowWidth/2 - c.width/2 + p1.width+ b1.width, 50);
+  b3 = select('#b3');
+  b3.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width, 50);
+  
+  p2.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width + b3.width + 20, 40);
+  p2.style('width','120px');
 
-
+  b1.mousePressed(button1);
+  b2.mousePressed(button2);
+  b3.mousePressed(button3);
 
 
   c.position(windowWidth/2 - width/2,100);
@@ -226,6 +234,61 @@ function setup() {
   frameRate(30); // set framerate
 }
 
+function button1() {
+myVideo.stop();
+
+var load = createP("loading");
+
+load.position(100,100);
+myVideo = createVideo('Paranal.mp4');
+
+ myVideo.size(windowWidth/2,windowHeight/2);
+  // workaround for browser autoplay restrictions
+  //myVideo.elt.muted = true;
+  // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+  // loop the video, hide the original object and start the playback
+  myVideo.loop();  myVideo.hide();
+ // myVideo.loop();
+  //img.position(10,10);
+  //img.loop()
+
+  img.elt.muted = true; 
+  
+}
+
+function button2(){
+  myVideo.stop();
+
+myVideo = createVideo('Paranal2.mp4');
+ myVideo.size(windowWidth/2,windowHeight/2);
+  // workaround for browser autoplay restrictions
+  //myVideo.elt.muted = true;
+  // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+  // loop the video, hide the original object and start the playback
+  myVideo.loop(); myVideo.hide();
+ // myVideo.loop();
+  //img.position(10,10);
+  //img.loop()
+  img.elt.muted = true; 
+}
+function button3(){
+  myVideo.stop();
+
+myVideo = createVideo('AntLine.mp4');
+ myVideo.size(windowWidth/2,windowHeight/2);
+  // workaround for browser autoplay restrictions
+  //myVideo.elt.muted = true;
+  // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+  // loop the video, hide the original object and start the playback
+  myVideo.loop(); myVideo.hide();
+ // myVideo.loop();
+  //img.position(10,10);
+  //img.loop()
+  img.elt.muted = true; 
+}
 
 function gotFile(file) {
   myVideo.stop();
@@ -243,6 +306,9 @@ function gotFile(file) {
   //img.loop()
   img.elt.muted = true;
 }
+
+
+
 
 function highlight() {
   fill(233,0,0);
