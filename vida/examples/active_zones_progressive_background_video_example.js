@@ -109,13 +109,13 @@ var synth = [];
 function setup() {
   c = createCanvas(windowWidth/2,windowHeight/2); // we need some space...
   b1 = createButton("Sky 1");
-  b1.position(30,100);
+  b1.position(windowWidth/20,100);
   b1.size(100,100);
   b1.style('border-color','black');
   b1.style('padding','24px');
   b1.style('background','white');
   b2 = createButton("Sky 2");
-  b2.position(30,220);
+  b2.position(windowWidth/20,220);
   b2.size(100,100);
 
 
@@ -123,7 +123,6 @@ function setup() {
 
   c.position(windowWidth/2 - width/2,100);
   dropzone = select('#dropzone');
-  //dropzone.width(windowWidth/2);
   dropzone.position(windowWidth/2-dropzone.width/2,450);
   dropzone.dragOver(highlight);
   dropzone.dragLeave(unhighlight);
@@ -404,7 +403,7 @@ function safeStartVideo() {
 }
 
 
-function mouseClicked() {
+function touchStarted() {
 
 
 if(gBool){
