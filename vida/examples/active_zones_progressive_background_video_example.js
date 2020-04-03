@@ -267,7 +267,7 @@ myVideo = createVideo('Paranal.mp4');
   //img.position(10,10);
   //img.loop()
 
-  img.elt.muted = true; 
+  myVideo.elt.muted = true; 
   
 }
 
@@ -285,7 +285,7 @@ myVideo = createVideo('Paranal2.mp4');
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  img.elt.muted = true; 
+  myVideo.elt.muted = true; 
 }
 function button3(){
   myVideo.stop();
@@ -301,7 +301,7 @@ myVideo = createVideo('AntLine.mp4');
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  img.elt.muted = true; 
+  myVideo.elt.muted = true; 
 }
 
 function gotFile(file) {
@@ -318,7 +318,7 @@ function gotFile(file) {
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  img.elt.muted = true;
+  myVideo.elt.muted = true;
 }
 
 
@@ -520,5 +520,7 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       x1 + i * (x2 - x1) / n, y1 + i * (y2 - y1) / n, zoneWidth, zoneHeight,
       onActiveZoneChange
     );} 
+
+
 
 }
