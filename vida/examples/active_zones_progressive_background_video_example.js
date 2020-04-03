@@ -92,6 +92,7 @@ let c;
 let linePoint1 = [100,100];
 let linePoint2 = [200,200];
 let gBool = 0;
+var startOsc;
 
   
 /*
@@ -111,6 +112,7 @@ var interactionStartedFlag = false;
 var synth = [];
 
 function setup() {
+  startOsc=0;
   //canvas centered in x 
   canvasVOffset = 100;
   c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
@@ -230,19 +232,19 @@ function setup() {
       oscillator that generates a sinusoidal waveform and places the oscillator
       in the synth array.
     */
-    var osc = new p5.Oscillator();
+    /*var osc = new p5.Oscillator();
     osc.setType('sine');
-    /*
+    
       Let's assume that each subsequent oscillator will play 4 halftones higher
       than the previous one (from the musical point of view, it does not make
       much sense, but it will be enough for the purposes of this example). If
       you do not take care of the music and the calculations below seem unclear
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
-    */
+    
     osc.freq(110.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
-    synth[i] = osc;
+    synth[i] = osc;*/
   }
 
   frameRate(30); // set framerate
@@ -350,6 +352,19 @@ function draw() {
       pop();
       return;
     }
+    if (startOsc == 0){
+    var n = 20;
+    startOsc = 1;
+
+    for(var i = 0; i < n; i++) {
+    
+    var osc = new p5.Oscillator();
+    osc.setType('sine');
+ 
+    osc.freq(110.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
+    osc.amp(0.0); osc.start();
+    synth[i] = osc;
+  }}
     background(0, 0, 255);
     /*
       Call VIDA update function, to which we pass the current video frame as a
