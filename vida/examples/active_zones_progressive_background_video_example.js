@@ -108,18 +108,32 @@ var synth = [];
 
 function setup() {
   c = createCanvas(windowWidth/2,windowHeight/2); // we need some space...
+  b1 = createButton("Sky 1");
+  b1.position(30,100);
+  b1.size(100,100);
+  b1.style('border-color','black');
+  b1.style('padding','24px');
+  b1.style('background','white');
+  b2 = createButton("Sky 2");
+  b2.position(30,220);
+  b2.size(100,100);
+
+
+
+
   c.position(windowWidth/2 - width/2,100);
   dropzone = select('#dropzone');
+  //dropzone.width(windowWidth/2);
   dropzone.position(windowWidth/2-dropzone.width/2,450);
   dropzone.dragOver(highlight);
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
   // load test video file
-  myVideo = createVideo(['stars.mp4']);
+  myVideo = createVideo(['Paranal.mp4']);
 
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
-  //myVideo.elt.muted = true;
+  myVideo.elt.muted = true;
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
@@ -205,7 +219,7 @@ function setup() {
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
     */
-    osc.freq(110.0 * Math.pow(2.0, (60 + (i * 4) - 69.0) / 12.0));
+    osc.freq(110.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
     synth[i] = osc;
   }
@@ -228,7 +242,7 @@ function gotFile(file) {
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  //img.elt.muted = true;
+  img.elt.muted = true;
 }
 
 function highlight() {
@@ -293,12 +307,13 @@ function draw() {
     //myVida.drawBlobs(0, 0);
     myVida.drawActiveZones(0, 0);
     fill(255,230,0);
-stroke(0,0,255);
-strokeWeight(2);
-line(linePoint1[0],linePoint1[1],linePoint2[0],linePoint2[1]);
+    stroke(0,0,255);
+    strokeWeight(2);
+    line(linePoint1[0],linePoint1[1],linePoint2[0],linePoint2[1]);
 
-ellipse(linePoint1[0],linePoint1[1],20,20);
-ellipse(linePoint2[0],linePoint2[1],20,20);
+    ellipse(linePoint1[0],linePoint1[1],20,20);
+    ellipse(linePoint2[0],linePoint2[1],20,20);
+
 
   }
   else {
