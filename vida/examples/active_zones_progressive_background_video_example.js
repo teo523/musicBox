@@ -86,12 +86,14 @@
 var myVideo, // video file
     myVida;  // VIDA
 let dropzone;
-let b3;
+
 let c;
 
 let linePoint1 = [100,100];
 let linePoint2 = [200,200];
 let gBool = 0;
+
+  
 /*
   Some web browsers do not allow the automatic start of a video file and allow
   you to play the file only as a result of user interaction. Therefore, we will
@@ -109,27 +111,39 @@ var interactionStartedFlag = false;
 var synth = [];
 
 function setup() {
-  c = createCanvas(windowWidth/2,windowHeight/2); // we need some space...
+  //canvas centered in x 
+  canvasVOffset = 100;
+  c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
+  c.position(windowWidth/2 - width/2,canvasVOffset);
+  
   p1 = createP("Other videos to try: ");
-  p1.style('width','130px');
-  p1.position(windowWidth/2 - c.width/2, 50);
   p2 = createP("...or upload your own video below!");
   b1 = select('#b1');
-  b1.position(windowWidth/2 - c.width/2 + p1.width, 50);
   b2 = select('#b2');
-  b2.position(windowWidth/2 - c.width/2 + p1.width+ b1.width, 50);
   b3 = select('#b3');
-  b3.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width, 50);
+
+  var buttonHeight = (canvasVOffset) / 2;
+  p1.size(width/5, buttonHeight);
+  p2.size(width/5, buttonHeight);
+  b1.size(width/5, buttonHeight);
+  b2.size(width/5, buttonHeight);
+  b3.size(width/5, buttonHeight);
   
-  p2.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width + b3.width + 20, 40);
-  p2.style('width','120px');
+
+  var vOffset = canvasVOffset - buttonHeight;
+  p1.position(windowWidth/2 - c.width/2, vOffset);
+  b1.position(windowWidth/2 - c.width/2 + p1.width, vOffset);
+  b2.position(windowWidth/2 - c.width/2 + p1.width+ b1.width, vOffset);
+  b3.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width, vOffset);
+  p2.position(windowWidth/2 - c.width/2 + p1.width + b1.width + b2.width + b3.width + 20, vOffset);
+  
 
   b1.mousePressed(button1);
   b2.mousePressed(button2);
   b3.mousePressed(button3);
 
 
-  c.position(windowWidth/2 - width/2,100);
+  
   dropzone = select('#dropzone');
   dropzone.position(windowWidth/2-dropzone.width/2,450);
   dropzone.dragOver(highlight);
@@ -327,6 +341,7 @@ function draw() {
       Wait for user interaction. Some browsers prevent video playback if the
       user does not interact with the webpage yet.
     */
+
     if(!interactionStartedFlag) {
       background(0);
       push();
