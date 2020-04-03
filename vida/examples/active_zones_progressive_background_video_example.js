@@ -350,10 +350,11 @@ function draw() {
       noStroke(); fill(255); textAlign(CENTER, CENTER);
       text('click or tap to start video playback', width / 2, height / 2);
       pop();
+      fill(255,0,0);
+      ellipse(20,20,30,100);
       return;
     }
-    fill(255,0,0);
-    ellipse(20,20,30,100);
+
     if (startOsc == 0){
 
     var n = 20;
