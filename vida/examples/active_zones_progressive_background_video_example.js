@@ -479,6 +479,7 @@ function safeStartVideo() {
   }
   // if no, we will try to play it
   try {
+    console.log("trying to loop video");
     myVideo.loop(); myVideo.hide();
     interactionStartedFlag = true;
   }
