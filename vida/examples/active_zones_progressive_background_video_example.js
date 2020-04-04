@@ -266,6 +266,7 @@ myVideo = createVideo('Paranal.mp4');
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop();  myVideo.hide();
+   myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
@@ -285,6 +286,7 @@ myVideo = createVideo('Paranal2.mp4');
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
+   myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
@@ -301,6 +303,7 @@ myVideo = createVideo('AntLine.mp4');
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
+   myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
@@ -318,10 +321,11 @@ function gotFile(file) {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
+   myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  myVideo.elt.muted = true;
+ 
 }
 
 
