@@ -156,12 +156,12 @@ function setup() {
 
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
-  myVideo.elt.muted = true;
+  
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-
+  //myVideo.elt.muted = true;
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
     class constructor (thanks to this you can use Vida e.g. in the instance
@@ -232,8 +232,8 @@ function setup() {
       oscillator that generates a sinusoidal waveform and places the oscillator
       in the synth array.
     */
-    var osc = new p5.Oscillator();
-    osc.setType('sine');
+    var osc = new p5.Oscillator('sine');
+    
     /*
       Let's assume that each subsequent oscillator will play 4 halftones higher
       than the previous one (from the musical point of view, it does not make
