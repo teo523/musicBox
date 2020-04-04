@@ -269,7 +269,7 @@ myVideo = createVideo('Paranal.mp4');
   //img.position(10,10);
   //img.loop()
 
-  myVideo.elt.muted = true; 
+  //myVideo.elt.muted = true; 
   
 }
 
@@ -287,7 +287,7 @@ myVideo = createVideo('Paranal2.mp4');
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  myVideo.elt.muted = true; 
+  //myVideo.elt.muted = true; 
 }
 function button3(){
   myVideo.stop();
@@ -303,7 +303,7 @@ myVideo = createVideo('AntLine.mp4');
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
-  myVideo.elt.muted = true; 
+  //myVideo.elt.muted = true; 
 }
 
 function gotFile(file) {
