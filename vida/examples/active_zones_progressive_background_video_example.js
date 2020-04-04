@@ -152,7 +152,7 @@ function setup() {
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
   // load test video file
-  myVideo = createVideo(['Paranal.mp4']);
+/*  myVideo = createVideo(['Paranal.mp4']);
 
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
@@ -160,7 +160,7 @@ function setup() {
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
-  //myVideo.loop(); myVideo.hide();
+  myVideo.loop(); myVideo.hide();*/
   //myVideo.elt.muted = true;
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
@@ -469,7 +469,7 @@ function touchEnded() {
 */
 function safeStartVideo() {
   // safety first..
-  if(myVideo === null || myVideo === undefined) return;
+ /* if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
   if(!isNaN(myVideo.time())) {
     if(myVideo.time() < 1) {
@@ -485,7 +485,18 @@ function safeStartVideo() {
   }
   catch(e) {
     console.log('[safeStartVideo] ' + e);
-  }
+  }*/
+
+  myVideo = createVideo(['Paranal.mp4']);
+
+  myVideo.size(windowWidth/2,windowHeight/2);
+  // workaround for browser autoplay restrictions
+  
+  // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+  // loop the video, hide the original object and start the playback
+  myVideo.loop(); myVideo.hide();
+  interactionStartedFlag = true;
 }
 
 
