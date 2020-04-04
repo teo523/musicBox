@@ -490,7 +490,7 @@ function safeStartVideo() {
 
 function touchStarted() {
 
-
+if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
 linePoint1[0] = mouseX;
