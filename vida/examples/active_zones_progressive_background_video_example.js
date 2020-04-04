@@ -160,7 +160,7 @@ function setup() {
   // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
-  myVideo.loop(); myVideo.hide();
+  //myVideo.loop(); myVideo.hide();
   //myVideo.elt.muted = true;
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
