@@ -161,7 +161,7 @@ function setup() {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-  myVideo.elt.muted = true;
+  myVideo.muted();
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
     class constructor (thanks to this you can use Vida e.g. in the instance
