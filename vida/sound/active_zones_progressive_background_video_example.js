@@ -33,6 +33,8 @@ function playOscillator() {
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
   osc.start();
+  osc.freq(freq, 0.1);
+  osc.amp(amp, 0.1);
   playing = true;
   osc.amp(0, 0.5);
   playing = false;
