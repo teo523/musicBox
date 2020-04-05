@@ -161,7 +161,7 @@ function setup() {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-  //myVideo.elt.muted = true;
+  myVideo.elt.muted = true;
   myVideo.volume(0);
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
@@ -303,7 +303,7 @@ myVideo = createVideo('AntLine.mp4');
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-   myVideo.volume(0);
+  myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
@@ -321,11 +321,10 @@ function gotFile(file) {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-   myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
- 
+  myVideo.elt.muted = true;
 }
 
 
@@ -461,8 +460,6 @@ function onActiveZoneChange(_vidaActiveZone) {
   );
   // ... or do something else, e.g., use this information to control the sound:
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
-  synth[_vidaActiveZone.id].amp(0,0.03);
-
 }
 
 function touchEnded() {
