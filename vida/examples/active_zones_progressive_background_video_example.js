@@ -86,7 +86,7 @@
 var myVideo, // video file
     myVida;  // VIDA
 let dropzone;
-
+let firstSound = 0;
 let c;
 
 let linePoint1 = [100,100];
@@ -119,7 +119,7 @@ function setup() {
   canvasVOffset = 100;
   c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
-  //c.mousePressed(playOscillator);
+  c.mousePressed(playOscillator);
   
   
   
@@ -425,12 +425,14 @@ function playOscillator() {
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
   let freq = 500;
-
+  if (firstSound ==0){
   oscTest.start();
   oscTest.freq(freq);
   oscTest.amp(0.5, 0.1);
 
   oscTest.amp(0, 0.5);
+  firstSound = 1;
+}
 
 }
 
@@ -479,7 +481,7 @@ function onActiveZoneChange(_vidaActiveZone) {
     ' status: ' + _vidaActiveZone.isMovementDetectedFlag
   );
   // ... or do something else, e.g., use this information to control the sound:
-  synth[_vidaActiveZone.id].start();
+  
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
   synth[_vidaActiveZone.id].amp(0,0.02);
 }
