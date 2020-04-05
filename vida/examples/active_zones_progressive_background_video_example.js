@@ -490,43 +490,6 @@ function touchEnded() {
   // init video (if needed)
   if(!interactionStartedFlag) safeStartVideo();
 
-if(!interactionStartedFlag) safeStartVideo();
-if(gBool){
-if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
-linePoint1[0] = mouseX;
-linePoint1[1] = mouseY;
-}}
-else {
-if (linePoint2[0] != mouseX || linePoint2[1] != mouseY ){
-linePoint2[0] = mouseX;
-linePoint2[1] = mouseY;
-}
-}
-
-gBool = 1 - gBool;
-
-
- var padding = 0.07; var n = 20;
-var zoneWidth = 0.01; var zoneHeight = 0.01;
-  var hOffset = (1.0 - (n * zoneWidth + (n - 1) * padding)) / 2.0;
-  var vOffset = 0.25;
-  var x1 = linePoint1[0]/width;   var x2 = linePoint2[0]/width;
- var y1 = linePoint1[1]/height;   var y2 = linePoint2[1]/height;
-
-  for(var i = 0; i <n ; i++) {
-  myVida.removeActiveZone(i);
-  }
-
-  for(var i = 0; i < n; i++) {
-
-    myVida.addActiveZone(
-      i,
-      x1 + i * (x2 - x1) / n, y1 + i * (y2 - y1) / n, zoneWidth, zoneHeight,
-      onActiveZoneChange
-    );} 
-
-
-
 
 }
 
@@ -556,8 +519,8 @@ function safeStartVideo() {
 }
 
 
-function touchStarted() {
-/*
+function mousePressed() {
+
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
@@ -593,6 +556,6 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       onActiveZoneChange
     );} 
 
-*/
+
 
 }
