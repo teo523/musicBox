@@ -6,16 +6,9 @@ function setup() {
   c.position(windowWidth/2 - width/2,canvasVOffset);
   c.mousePressed(playOscillator);
   osc = new p5.Oscillator('sine');
-  myVideo = createVideo(['AntLine.mp4']);
-
-  myVideo.size(windowWidth/2,windowHeight/2);
-  // workaround for browser autoplay restrictions
   
-  // fix for some mobile browsers
-  myVideo.elt.setAttribute('playsinline', '');
-  // loop the video, hide the original object and start the playback
-  myVideo.loop(); myVideo.hide();
-  myVideo.elt.muted = true;
+
+
   
 }
 
@@ -41,10 +34,11 @@ function playOscillator() {
   // See also: userStartAudio();
   osc.start();
   playing = true;
+  osc.amp(0, 0.5);
+  playing = false;
 }
 
 function mouseReleased() {
   // ramp amplitude to 0 over 0.5 seconds
-  osc.amp(0, 0.5);
-  playing = false;
+ 
 }
