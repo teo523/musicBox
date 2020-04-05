@@ -423,10 +423,10 @@ function playOscillator() {
   // starting an oscillator on a user gesture will enable audio
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
-  let freq = 100;
+  let freq = 500;
 
   oscTest.start();
-  oscTest.freq(freq, 0.1);
+  oscTest.freq(freq);
   oscTest.amp(0.5, 0.1);
   playing = true;
   oscTest.amp(0, 0.5);
