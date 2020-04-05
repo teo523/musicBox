@@ -161,7 +161,7 @@ function setup() {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-  myVideo.elt.muted = true;
+  //myVideo.elt.muted = true;
   myVideo.volume(0);
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
@@ -360,7 +360,6 @@ function draw() {
     }
  
     background(0, 0, 255);
-    myVideo.elt.muted = false;
     /*
       Call VIDA update function, to which we pass the current video frame as a
       parameter. Usually this function is called in the draw loop (once per
