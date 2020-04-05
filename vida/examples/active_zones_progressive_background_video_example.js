@@ -119,7 +119,7 @@ function setup() {
   canvasVOffset = 100;
   c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
-  c.mousePressed(playOscillator);
+
   
   
   
@@ -489,8 +489,6 @@ function onActiveZoneChange(_vidaActiveZone) {
 function touchEnded() {
   // init video (if needed)
   if(!interactionStartedFlag) safeStartVideo();
-
-
 }
 
 /*
@@ -519,7 +517,7 @@ function safeStartVideo() {
 }
 
 
-function mousePressed() {
+function touchStarted() {
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
@@ -556,6 +554,6 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       onActiveZoneChange
     );} 
 
-
+playOscillator;
 
 }
