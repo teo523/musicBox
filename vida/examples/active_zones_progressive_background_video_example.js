@@ -360,6 +360,7 @@ function draw() {
     }
  
     background(0, 0, 255);
+    myVideo.elt.muted = false;
     /*
       Call VIDA update function, to which we pass the current video frame as a
       parameter. Usually this function is called in the draw loop (once per
