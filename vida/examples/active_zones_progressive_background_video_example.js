@@ -88,7 +88,7 @@ var myVideo, // video file
 let dropzone;
 
 let c;
-let testOsc ;
+
 let linePoint1 = [100,100];
 let linePoint2 = [200,200];
 let gBool = 0;
@@ -118,10 +118,11 @@ function setup() {
   canvasVOffset = 100;
   c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
+  let oscTest = new p5.Oscillator('sine');
   c.mousePressed(playOscillator);
   
-  testOsc = new p5.Oscillator('sine');
-
+  
+  
   p1 = createP("Other videos to try: ");
   p2 = createP("...or upload your own video below!");
   b1 = select('#b1');
@@ -428,9 +429,9 @@ function playOscillator() {
   oscTest.start();
   oscTest.freq(freq);
   oscTest.amp(0.5, 0.1);
-  playing = true;
+
   oscTest.amp(0, 0.5);
-  playing = false;
+
 }
 
 /*
