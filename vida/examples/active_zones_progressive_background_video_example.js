@@ -479,6 +479,7 @@ function onActiveZoneChange(_vidaActiveZone) {
     ' status: ' + _vidaActiveZone.isMovementDetectedFlag
   );
   // ... or do something else, e.g., use this information to control the sound:
+  synth[_vidaActiveZone.id].start();
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
   synth[_vidaActiveZone.id].amp(0,0.02);
 }
