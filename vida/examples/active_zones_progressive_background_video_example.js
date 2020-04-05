@@ -554,6 +554,6 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       onActiveZoneChange
     );} 
 
-return false;
+
 
 }
