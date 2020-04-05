@@ -110,7 +110,7 @@ var interactionStartedFlag = false;
   used to store oscillators.
 */
 var synth = [];
-var oscTest;
+var oscTest = new p5.Oscillator('sine');
 
 function setup() {
   startOsc=0;
@@ -119,7 +119,6 @@ function setup() {
   canvasVOffset = 100;
   c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
-  oscTest = new p5.Oscillator('sine');
   c.mousePressed(playOscillator);
   
   
