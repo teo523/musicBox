@@ -135,6 +135,7 @@ function setup() {
   b1.size(width/5, buttonHeight);
   b2.size(width/5, buttonHeight);
   b3.size(width/5, buttonHeight);
+  b1.style('font-size',3);
   
 
   var vOffset = canvasVOffset - buttonHeight;
@@ -248,7 +249,7 @@ function setup() {
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
     */
-    osc.freq(110.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
+    osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
     synth[i] = osc;
   }
@@ -516,8 +517,11 @@ function onActiveZoneChange(_vidaActiveZone) {
   );
   // ... or do something else, e.g., use this information to control the sound:
   
+
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
-  synth[_vidaActiveZone.id].amp(0,0.02);
+  synth[_vidaActiveZone.id].amp(0,1);
+ 
+  //synth[_vidaActiveZone.id].freq(initialFreq,0.1);
 }
 
 function touchEnded() {
