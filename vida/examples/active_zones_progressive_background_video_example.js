@@ -113,7 +113,7 @@ var synth = [];
 
 
 function setup() {
-  console.log('setup starts');
+
   startOsc=0;
   //canvas centered in x 
 
@@ -161,7 +161,7 @@ function setup() {
   // load test video file
   myVideo = createVideo(['Paranal.mp4']);
 
-  /*myVideo.size(windowWidth/2,windowHeight/2);
+  myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   
   /// fix for some mobile browsers
@@ -169,7 +169,7 @@ function setup() {
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
-  myVideo.volume(0);*/
+  myVideo.volume(0);
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
     class constructor (thanks to this you can use Vida e.g. in the instance
@@ -530,6 +530,8 @@ function safeStartVideo() {
 
 
 function touchStarted() {
+    console.log('resume');
+  getAudioContext().resume();
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
