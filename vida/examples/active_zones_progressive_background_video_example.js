@@ -166,8 +166,9 @@ function setup() {
   /// fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
-  myVideo.elt.autoplay = false;
-  myVideo.loop(); myVideo.hide();
+  
+  //myVideo.loop(); 
+  myVideo.hide();
   myVideo.elt.muted = true; 
   myVideo.volume(0);
   /*
