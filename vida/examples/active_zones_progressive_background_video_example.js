@@ -93,6 +93,7 @@ let linePoint1 = [100,100];
 let linePoint2 = [200,200];
 let gBool = 0;
 var startOsc;
+var oscTest;
 
   
 /*
@@ -110,7 +111,7 @@ var interactionStartedFlag = false;
   used to store oscillators.
 */
 var synth = [];
-var oscTest = new p5.Oscillator('sine');
+
 
 function setup() {
   startOsc=0;
@@ -167,8 +168,7 @@ function setup() {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   
-  //myVideo.loop(); 
-  myVideo.hide();
+  myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
   myVideo.volume(0);
   /*
@@ -255,6 +255,7 @@ function setup() {
     osc.amp(0.0); osc.start();
     synth[i] = osc;
   }
+  oscTest = new p5.Oscillator('sine');
 
   frameRate(30); // set framerate
 }
