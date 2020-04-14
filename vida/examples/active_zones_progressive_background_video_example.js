@@ -166,13 +166,8 @@ function setup() {
   /// fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
-  console.log('loop:');
-  myVideo.loop(); 
-   console.log("hide:");
-   myVideo.hide();
-     console.log("muted:");
+  myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
-  console.log("volume:");
   myVideo.volume(0);
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
@@ -260,6 +255,8 @@ function setup() {
   }
 
   frameRate(30); // set framerate
+  console.log('setup ended');
+   console.log('setup ended2');
 }
 
 function button1() {
