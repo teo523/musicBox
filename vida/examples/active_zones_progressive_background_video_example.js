@@ -349,7 +349,7 @@ function unhighlight() {
 
 
 function draw() {
-   console.log('draw');
+   console.log('draw1');
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
       Wait for user interaction. Some browsers prevent video playback if the
@@ -527,7 +527,7 @@ function safeStartVideo() {
 
 
 function touchStarted() {
-
+console.log('touch!');
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
