@@ -250,7 +250,7 @@ function setup() {
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
     */
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
-    osc.amp(0.0); osc.start();
+    osc.amp(0.0); //osc.start();
     synth[i] = osc;
   }
 
