@@ -255,8 +255,7 @@ function setup() {
   }
 
   frameRate(30); // set framerate
-  console.log('setup ended');
-   console.log('setup ended2');
+
 }
 
 function button1() {
@@ -362,6 +361,7 @@ function draw() {
       noStroke(); fill(255); textAlign(CENTER, CENTER);
       text('click or tap to start video playback', width / 2, height / 2);
       pop();
+      console.log('draw');
       
       return;
     }
