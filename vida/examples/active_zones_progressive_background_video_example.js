@@ -349,6 +349,7 @@ function unhighlight() {
 
 
 function draw() {
+   console.log('draw');
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
       Wait for user interaction. Some browsers prevent video playback if the
@@ -361,7 +362,7 @@ function draw() {
       noStroke(); fill(255); textAlign(CENTER, CENTER);
       text('click or tap to start video playback', width / 2, height / 2);
       pop();
-      console.log('draw');
+
       
       return;
     }
