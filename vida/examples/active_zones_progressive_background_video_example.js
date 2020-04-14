@@ -252,6 +252,7 @@ function setup() {
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); //osc.start();
     synth[i] = osc;
+    console.log('dont startosc');
   }
 
   frameRate(30); // set framerate
