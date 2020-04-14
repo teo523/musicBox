@@ -259,6 +259,7 @@ function setup() {
 }
 
 function button1() {
+console.log('b1');
 myVideo.stop();
 
 var load = createP("loading");
@@ -349,7 +350,6 @@ function unhighlight() {
 
 
 function draw() {
-   console.log('draw1');
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
       Wait for user interaction. Some browsers prevent video playback if the
@@ -527,7 +527,6 @@ function safeStartVideo() {
 
 
 function touchStarted() {
-console.log('touch!');
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
