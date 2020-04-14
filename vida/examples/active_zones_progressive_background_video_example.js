@@ -110,7 +110,7 @@ var interactionStartedFlag = false;
   used to store oscillators.
 */
 var synth = [];
-var oscTest = new p5.Oscillator('sine');
+
 
 function setup() {
   startOsc=0;
@@ -350,7 +350,6 @@ function unhighlight() {
 
 
 function draw() {
-  console.log('drawtouch');
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
       Wait for user interaction. Some browsers prevent video playback if the
@@ -429,6 +428,7 @@ function playOscillator() {
   // starting an oscillator on a user gesture will enable audio
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
+  var oscTest = new p5.Oscillator('sine');
   let freq = 500;
   if (firstSound ==0){
   oscTest.start();
@@ -528,7 +528,7 @@ function safeStartVideo() {
 
 
 function touchStarted() {
-console.log('touch2');
+
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
