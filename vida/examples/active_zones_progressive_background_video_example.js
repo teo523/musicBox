@@ -239,20 +239,20 @@ function setup() {
       oscillator that generates a sinusoidal waveform and places the oscillator
       in the synth array.
     */
-    var osc = new p5.Oscillator('sine');
+    /* var osc = new p5.Oscillator('sine');
     
-    /*
+   
       Let's assume that each subsequent oscillator will play 4 halftones higher
       than the previous one (from the musical point of view, it does not make
       much sense, but it will be enough for the purposes of this example). If
       you do not take care of the music and the calculations below seem unclear
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
-    */
+    
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); //osc.start();
-    synth[i] = osc;
-    console.log('dont startosc');
+    synth[i] = osc;*/
+    console.log('dont startosc at all');
   }
 
   frameRate(30); // set framerate
