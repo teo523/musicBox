@@ -350,6 +350,7 @@ function unhighlight() {
 
 
 function draw() {
+  console.log('draw2');
   if(myVideo !== null && myVideo !== undefined) { // safety first
     /*
       Wait for user interaction. Some browsers prevent video playback if the
