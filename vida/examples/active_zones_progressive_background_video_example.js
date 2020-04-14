@@ -163,8 +163,8 @@ function setup() {
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   
-  // fix for some mobile browsers
-  myVideo.elt.setAttribute('playsinline', '');
+  /// fix for some mobile browsers
+  //myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true;
