@@ -164,10 +164,11 @@ function setup() {
   // workaround for browser autoplay restrictions
   
   /// fix for some mobile browsers
-  //myVideo.elt.setAttribute('playsinline', '');
+  myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
+  myVideo.elt.autoplay = false;
   myVideo.loop(); myVideo.hide();
-  myVideo.elt.muted = true;
+  myVideo.elt.muted = true; 
   myVideo.volume(0);
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
