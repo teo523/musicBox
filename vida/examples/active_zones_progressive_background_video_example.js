@@ -160,6 +160,7 @@ function setup() {
   dropzone.drop(gotFile,unhighlight);
   // load test video file
   myVideo = createVideo('Paranal.mp4');
+  myVideo.hide();
 /*
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
