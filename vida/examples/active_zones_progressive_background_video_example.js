@@ -431,6 +431,8 @@ function playOscillator() {
   // starting an oscillator on a user gesture will enable audio
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
+  console.log('playOscillator');
+
   oscTest = new p5.Oscillator('sine');
   let freq = 500;
   if (firstSound ==0){
@@ -509,7 +511,7 @@ function touchEnded() {
   with the user before playing video files.
 */
 function safeStartVideo() {
-  console.log("safe start");
+  console.log("safe startX");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
