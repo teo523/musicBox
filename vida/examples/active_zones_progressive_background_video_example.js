@@ -508,7 +508,7 @@ function onActiveZoneChange(_vidaActiveZone) {
   with the user before playing video files.
 */
 function safeStartVideo() {
-  console.log("safe startQ");
+  console.log("safe startW");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
@@ -532,7 +532,7 @@ function safeStartVideo() {
 
 function touchEnded() {
  console.log("touchEnded");
-playOscillator;
+playOscillator();
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
