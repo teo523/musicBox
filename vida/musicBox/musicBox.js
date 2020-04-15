@@ -160,9 +160,9 @@ function setup() {
   dropzone.drop(gotFile,unhighlight);
   // load test video file
   myVideo = createVideo('../examples/Paranal.mp4');
+  myVideo.hide();
 
-
-  myVideo.size(windowWidth/2,windowHeight/2);
+  /*myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   
   /// fix for some mobile browsers
@@ -170,7 +170,7 @@ function setup() {
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
-  myVideo.volume(0);
+  myVideo.volume(0);*/
  
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
@@ -437,6 +437,18 @@ function playOscillator() {
   oscTest = new p5.Oscillator('sine');
   let freq = 500;
   if (firstSound ==0){
+
+  for(var i = 0; i < 20; i++) {
+    
+    var osc = new p5.Oscillator('sine');
+    
+
+    osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
+    osc.amp(0.0); osc.start();
+    console.log('osc.start2');
+    synth[i] = osc;
+
+  }
   oscTest.start();
   oscTest.freq(freq);
   oscTest.amp(0.5, 0.1);
