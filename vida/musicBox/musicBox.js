@@ -445,7 +445,7 @@ function playOscillator() {
 
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
-    console.log('osc.start2');
+    console.log('osc.start3');
     synth[i] = osc;
 
   }
