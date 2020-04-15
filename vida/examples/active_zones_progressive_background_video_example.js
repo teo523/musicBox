@@ -501,17 +501,14 @@ function onActiveZoneChange(_vidaActiveZone) {
   //synth[_vidaActiveZone.id].freq(initialFreq,0.1);
 }
 
-function touchEnded() {
-  // init video (if needed)
-  if(!interactionStartedFlag) safeStartVideo();
-}
+
 
 /*
   Helper function that starts playback on browsers that require interaction
   with the user before playing video files.
 */
 function safeStartVideo() {
-  console.log("safe startY");
+  console.log("safe startZ");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
@@ -533,7 +530,7 @@ function safeStartVideo() {
 }
 
 
-function touchStarted() {
+function touchEnded() {
  
 playOscillator;
 
