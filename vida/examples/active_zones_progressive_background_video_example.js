@@ -496,7 +496,7 @@ function onActiveZoneChange(_vidaActiveZone) {
   
 
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
-  synth[_vidaActiveZone.id].amp(0,1);
+  //synth[_vidaActiveZone.id].amp(0,1);
  
   //synth[_vidaActiveZone.id].freq(initialFreq,0.1);
 }
