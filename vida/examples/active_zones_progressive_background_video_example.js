@@ -159,8 +159,8 @@ function setup() {
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
   // load test video file
-  /*myVideo = createVideo(['Paranal.mp4']);
-
+  myVideo = createVideo('Paranal.mp4');
+/*
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   
@@ -170,7 +170,7 @@ function setup() {
   myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
   myVideo.volume(0);*/
-  console.log("delete first video");
+  console.log("delete first video2");
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
     class constructor (thanks to this you can use Vida e.g. in the instance
@@ -267,9 +267,9 @@ myVideo.stop();
 var load = createP("loading");
 
 load.position(100,100);
-myVideo = createVideo('Paranal.mp4');
+  myVideo = createVideo('Paranal.mp4');
 
- myVideo.size(windowWidth/2,windowHeight/2);
+  myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   //myVideo.elt.muted = true;
   // fix for some mobile browsers
