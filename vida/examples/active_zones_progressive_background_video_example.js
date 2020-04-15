@@ -254,7 +254,7 @@ function setup() {
     */
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
-    console.log('osc.start');
+    console.log('osc.start2');
     synth[i] = osc;
 
   }
@@ -496,6 +496,7 @@ function onActiveZoneChange(_vidaActiveZone) {
   // ... or do something else, e.g., use this information to control the sound:
   
 
+  synth[_vidaActiveZone.id].start();
   synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
   //synth[_vidaActiveZone.id].amp(0,1);
  
