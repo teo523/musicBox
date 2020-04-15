@@ -159,7 +159,7 @@ function setup() {
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
   // load test video file
-  myVideo = createVideo(['Paranal.mp4']);
+  /*myVideo = createVideo(['Paranal.mp4']);
 
   myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
@@ -169,7 +169,8 @@ function setup() {
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
   myVideo.elt.muted = true; 
-  myVideo.volume(0);
+  myVideo.volume(0);*/
+  console.log("delete first video");
   /*
     VIDA stuff. One parameter - the current sketch - should be passed to the
     class constructor (thanks to this you can use Vida e.g. in the instance
@@ -261,7 +262,6 @@ function setup() {
 }
 
 function button1() {
-console.log('b1');
 myVideo.stop();
 
 var load = createP("loading");
@@ -508,6 +508,7 @@ function touchEnded() {
   with the user before playing video files.
 */
 function safeStartVideo() {
+  console.log("safe start");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
@@ -530,8 +531,8 @@ function safeStartVideo() {
 
 
 function touchStarted() {
-    console.log('resume');
-  getAudioContext().resume();
+ 
+
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
