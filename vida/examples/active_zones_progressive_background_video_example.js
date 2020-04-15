@@ -511,7 +511,7 @@ function touchEnded() {
   with the user before playing video files.
 */
 function safeStartVideo() {
-  console.log("safe startX");
+  console.log("safe startY");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
@@ -535,7 +535,7 @@ function safeStartVideo() {
 
 function touchStarted() {
  
-
+playOscillator;
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
@@ -571,7 +571,7 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       x1 + i * (x2 - x1) / n, y1 + i * (y2 - y1) / n, zoneWidth, zoneHeight,
       onActiveZoneChange
     );} 
-playOscillator;
+
 
 
 }
