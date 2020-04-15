@@ -545,8 +545,8 @@ function safeStartVideo() {
 }
 
 
-function touchEnded() {
- console.log("touchEnded");
+function touchStarted() {
+ console.log("touchStarted");
 playOscillator();
 
 if(!interactionStartedFlag) safeStartVideo();
