@@ -497,7 +497,8 @@ function onActiveZoneChange(_vidaActiveZone) {
   
 
   synth[_vidaActiveZone.id].start();
-  synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag);
+  synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag,0.1);
+  synth[_vidaActiveZone.id].amp(0,0.5);
   //synth[_vidaActiveZone.id].amp(0,1);
  
   //synth[_vidaActiveZone.id].freq(initialFreq,0.1);
@@ -510,7 +511,7 @@ function onActiveZoneChange(_vidaActiveZone) {
   with the user before playing video files.
 */
 function safeStartVideo() {
-  console.log("safe startW");
+  console.log("safe startE");
   // safety first..
   if(myVideo === null || myVideo === undefined) return;
   // here we check if the video is already playing...
