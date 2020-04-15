@@ -93,7 +93,7 @@ let linePoint1 = [100,100];
 let linePoint2 = [200,200];
 let gBool = 0;
 var startOsc;
-
+let oscTest;
   
 /*
   Some web browsers do not allow the automatic start of a video file and allow
@@ -431,13 +431,13 @@ function playOscillator() {
   // starting an oscillator on a user gesture will enable audio
   // in browsers that have a strict autoplay policy.
   // See also: userStartAudio();
-  var oscTest = new p5.Oscillator('sine');
+  oscTest = new p5.Oscillator('sine');
   let freq = 500;
   if (firstSound ==0){
   oscTest.start();
   oscTest.freq(freq);
   oscTest.amp(0.5, 0.1);
-
+  console.log('oscTest played');
   oscTest.amp(0, 0.5);
   firstSound = 1;
 }
