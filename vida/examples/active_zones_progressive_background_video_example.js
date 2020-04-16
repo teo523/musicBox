@@ -117,8 +117,8 @@ function setup() {
   startOsc=0;
   //canvas centered in x 
 
-  canvasVOffset = 100;
-  c = createCanvas(3 * windowWidth/6, 3 * windowHeight/6); // we need some space...
+  canvasVOffset = windowHeight / 10;
+  c = createCanvas(3*windowWidth/6, 3 * windowHeight/6); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
   
   
@@ -169,7 +169,7 @@ function setup() {
   myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
   myVideo.loop(); myVideo.hide();
-  myVideo.elt.muted = true; 
+  //myVideo.elt.muted = true; 
   myVideo.volume(0);
  
   /*
@@ -254,7 +254,6 @@ function setup() {
     */
     osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
     osc.amp(0.0); osc.start();
-    console.log('osc.start2');
     synth[i] = osc;
 
   }
@@ -264,7 +263,7 @@ function setup() {
 }
 
 function button1() {
-
+  console.log('unmuted');
   myVideo = createVideo('Paranal.mp4');
   if(!interactionStartedFlag) safeStartVideo();
   myVideo.size(windowWidth/2,windowHeight/2);
@@ -276,7 +275,7 @@ function button1() {
   myVideo.loop();  myVideo.hide();
   //not sure is I need this
   myVideo.volume(0);
-  myVideo.elt.muted = true; 
+  //myVideo.elt.muted = true; 
     
   }
 
