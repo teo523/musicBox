@@ -265,82 +265,68 @@ function setup() {
 
 function button1() {
 
-myVideo = createVideo('Paranal.mp4');
-
-if(!interactionStartedFlag) safeStartVideo();
-
-var load = createP("loading");
-
-load.position(100,100);
-  
-
-myVideo.size(windowWidth/2,windowHeight/2);
-  // workaround for browser autoplay restrictions
-  //myVideo.elt.muted = true;
-  // fix for some mobile browsers
-myVideo.elt.setAttribute('playsinline', '');
-  // loop the video, hide the original object and start the playback
-myVideo.loop();  myVideo.hide();
-myVideo.volume(0);
- // myVideo.loop();
-  //img.position(10,10);
-  //img.loop()
-
-myVideo.elt.muted = true; 
-  
-}
+  myVideo = createVideo('Paranal.mp4');
+  if(!interactionStartedFlag) safeStartVideo();
+  myVideo.size(windowWidth/2,windowHeight/2);
+    // workaround for browser autoplay restrictions
+    //myVideo.elt.muted = true;
+    // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+    // loop the video, hide the original object and start the playback
+  myVideo.loop();  myVideo.hide();
+  //not sure is I need this
+  myVideo.volume(0);
+  myVideo.elt.muted = true; 
+    
+  }
 
 function button2(){
-  myVideo.stop();
 
-myVideo = createVideo('Paranal2.mp4');
- myVideo.size(windowWidth/2,windowHeight/2);
-  // workaround for browser autoplay restrictions
-  //myVideo.elt.muted = true;
-  // fix for some mobile browsers
+  myVideo = createVideo('Paranal2.mp4');
+  if(!interactionStartedFlag) safeStartVideo();
+  myVideo.size(windowWidth/2,windowHeight/2);
+    // workaround for browser autoplay restrictions
+    //myVideo.elt.muted = true;
+    // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
-  // loop the video, hide the original object and start the playback
-  myVideo.loop(); myVideo.hide();
-   myVideo.volume(0);
- // myVideo.loop();
-  //img.position(10,10);
-  //img.loop()
-  myVideo.elt.muted = true; 
-}
-function button3(){
-  myVideo.stop();
-
-myVideo = createVideo('AntLine.mp4');
- myVideo.size(windowWidth/2,windowHeight/2);
-  // workaround for browser autoplay restrictions
-  //myVideo.elt.muted = true;
-  // fix for some mobile browsers
-  myVideo.elt.setAttribute('playsinline', '');
-  // loop the video, hide the original object and start the playback
-  myVideo.loop(); myVideo.hide();
+    // loop the video, hide the original object and start the playback
+  myVideo.loop();  myVideo.hide();
+  //not sure is I need this
   myVideo.volume(0);
- // myVideo.loop();
-  //img.position(10,10);
-  //img.loop()
   myVideo.elt.muted = true; 
-}
+  }
+
+function button3(){
+
+  myVideo = createVideo('AntLine.mp4');
+  if(!interactionStartedFlag) safeStartVideo();
+  myVideo.size(windowWidth/2,windowHeight/2);
+    // workaround for browser autoplay restrictions
+    //myVideo.elt.muted = true;
+    // fix for some mobile browsers
+  myVideo.elt.setAttribute('playsinline', '');
+    // loop the video, hide the original object and start the playback
+  myVideo.loop();  myVideo.hide();
+  //not sure is I need this
+  myVideo.volume(0);
+  myVideo.elt.muted = true; 
+  }
 
 function gotFile(file) {
-  myVideo.stop();
 
   myVideo = createVideo(file.data);
- myVideo.size(windowWidth/2,windowHeight/2);
-  // workaround for browser autoplay restrictions
-  //myVideo.elt.muted = true;
-  // fix for some mobile browsers
+  if(!interactionStartedFlag) safeStartVideo();
+  myVideo.size(windowWidth/2,windowHeight/2);
+    // workaround for browser autoplay restrictions
+    //myVideo.elt.muted = true;
+    // fix for some mobile browsers
   myVideo.elt.setAttribute('playsinline', '');
-  // loop the video, hide the original object and start the playback
-  myVideo.loop(); myVideo.hide();
- // myVideo.loop();
-  //img.position(10,10);
-  //img.loop()
-  myVideo.elt.muted = true;
-}
+    // loop the video, hide the original object and start the playback
+  myVideo.loop();  myVideo.hide();
+  //not sure is I need this
+  myVideo.volume(0);
+  myVideo.elt.muted = true; 
+  }
 
 
 
@@ -367,7 +353,7 @@ function draw() {
       background(0);
       push();
       noStroke(); fill(255); textAlign(CENTER, CENTER);
-      text('Select one of the videos above', width / 2, height / 2);
+      text('Select one of the videos above to start', width / 2, height / 2);
       pop();
 
       
@@ -376,7 +362,7 @@ function draw() {
  
     background(0, 0, 255);
     textSize(32);
-    text('Choose a video above', 10, 30);
+    text('Loading video...', 10, 30);
     /*
       Call VIDA update function, to which we pass the current video frame as a
       parameter. Usually this function is called in the draw loop (once per
