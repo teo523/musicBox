@@ -263,7 +263,7 @@ function setup() {
 }
 
 function button1() {
-  console.log('unmuted');
+  console.log('unmuted2');
   myVideo = createVideo('Paranal.mp4');
   if(!interactionStartedFlag) safeStartVideo();
   myVideo.size(windowWidth/2,windowHeight/2);
@@ -274,8 +274,9 @@ function button1() {
     // loop the video, hide the original object and start the playback
   myVideo.loop();  myVideo.hide();
   //not sure is I need this
+  myVideo.elt.muted = true; 
   myVideo.volume(0);
-  //myVideo.elt.muted = true; 
+
     
   }
 
