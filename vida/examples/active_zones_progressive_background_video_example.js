@@ -292,8 +292,9 @@ function button2(){
     // loop the video, hide the original object and start the playback
   myVideo.loop();  myVideo.hide();
   //not sure is I need this
-  myVideo.volume(0);
   myVideo.elt.muted = true; 
+  myVideo.volume(0);
+
   }
 
 function button3(){
@@ -308,8 +309,9 @@ function button3(){
     // loop the video, hide the original object and start the playback
   myVideo.loop();  myVideo.hide();
   //not sure is I need this
-  myVideo.volume(0);
+  
   myVideo.elt.muted = true; 
+  myVideo.volume(0);
   }
 
 function gotFile(file) {
@@ -324,8 +326,9 @@ function gotFile(file) {
     // loop the video, hide the original object and start the playback
   myVideo.loop();  myVideo.hide();
   //not sure is I need this
-  myVideo.volume(0);
+  
   myVideo.elt.muted = true; 
+  myVideo.volume(0);
   }
 
 
