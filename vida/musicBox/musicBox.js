@@ -547,7 +547,7 @@ function safeStartVideo() {
 
 function touchStarted() {
  console.log("touchStarted");
-playOscillator();
+
 
 if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
@@ -583,7 +583,7 @@ var zoneWidth = 0.01; var zoneHeight = 0.01;
       x1 + i * (x2 - x1) / n, y1 + i * (y2 - y1) / n, zoneWidth, zoneHeight,
       onActiveZoneChange
     );} 
-
+playOscillator();
 
 
 }

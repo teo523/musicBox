@@ -264,26 +264,29 @@ function setup() {
 }
 
 function button1() {
-myVideo.stop();
+
+myVideo = createVideo('Paranal.mp4');
+
+if(!interactionStartedFlag) safeStartVideo();
 
 var load = createP("loading");
 
 load.position(100,100);
-  myVideo = createVideo('Paranal.mp4');
+  
 
-  myVideo.size(windowWidth/2,windowHeight/2);
+myVideo.size(windowWidth/2,windowHeight/2);
   // workaround for browser autoplay restrictions
   //myVideo.elt.muted = true;
   // fix for some mobile browsers
-  myVideo.elt.setAttribute('playsinline', '');
+myVideo.elt.setAttribute('playsinline', '');
   // loop the video, hide the original object and start the playback
-  myVideo.loop();  myVideo.hide();
-   myVideo.volume(0);
+myVideo.loop();  myVideo.hide();
+myVideo.volume(0);
  // myVideo.loop();
   //img.position(10,10);
   //img.loop()
 
-  myVideo.elt.muted = true; 
+myVideo.elt.muted = true; 
   
 }
 
@@ -364,7 +367,7 @@ function draw() {
       background(0);
       push();
       noStroke(); fill(255); textAlign(CENTER, CENTER);
-      text('click or tap to start video playback', width / 2, height / 2);
+      text('Select one of the videos above', width / 2, height / 2);
       pop();
 
       
@@ -372,6 +375,8 @@ function draw() {
     }
  
     background(0, 0, 255);
+    textSize(32);
+    text('Choose a video above', 10, 30);
     /*
       Call VIDA update function, to which we pass the current video frame as a
       parameter. Usually this function is called in the draw loop (once per
@@ -537,7 +542,7 @@ function touchEnded() {
  console.log("touchEnded");
 playOscillator();
 
-if(!interactionStartedFlag) safeStartVideo();
+//if(!interactionStartedFlag) safeStartVideo();
 if(gBool){
 if (linePoint1[0] != mouseX || linePoint1[1] != mouseY ){
 linePoint1[0] = mouseX;
