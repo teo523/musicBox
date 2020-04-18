@@ -124,7 +124,7 @@ function setup() {
   canvasVOffset = windowHeight / 10;
   c = createCanvas(2*windowWidth/3, 2 * windowHeight/3); 
   c.hide();
-  c.position(b1.position().x,b1.position().y + 20);
+  c.position(windowWidth/2 - c.width/2 ,b1.position().y + 2 * b1.height);
   background(255,0,0);
   
   
@@ -136,7 +136,7 @@ function setup() {
 
   
   dropzone = select('#dropzone');
-  dropzone.position(windowWidth/2-dropzone.width/2,450);
+  dropzone.position(c.position().x ,windowHeight - 60);
   dropzone.dragOver(highlight);
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
@@ -346,8 +346,8 @@ function draw() {
       return;
     }
     c.show();
-    c.position(windowWidth/2 - c.width/2 ,b1.position().y + 3 * b1.height);
-    dropzone.position(c.position().x ,c.position().y + c.height + 5);
+    c.position(windowWidth/2 - c.width/2 ,windowHeight/2 - c.height/2);
+   dropzone.position(c.position().x ,windowHeight - 60);
 
     t1.remove();
     background(0, 0, 255);
