@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>musicBox</title>
+  <script src="p5/p5.js"></script>
+  <script src="p5/p5.sound.js"></script>
+  <script src="vida/p5.vida.js"></script>
+  <script src="active_zones_progressive_background_video_example.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+
+ 
+
+<link href="./main.3f6952e4.css" rel="stylesheet"></head>
+
+
+<style>
+
+p {
+  color: white;
+}  
+#dropzone {
+border-style: dashed;
+
+}
+.btn {
+  border: 2px solid white;
+  background-color: Transparent;
+  color: white;
+  padding: 4px 8px;
+  font-size: 1.6vw;
+  cursor: pointer;
+  text-align: left;
+}
+
+.btn:hover {
+  border: 2px solid white;
+  background-color: white;
+  color: black;
+  padding: 4px 8px;
+  font-size: 1.6vw;
+  cursor: pointer;
+  text-align: left;
+}
+</style> 
+
+<body class="minimal">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+<!-- Add your content of header -->
+<header>
+  <nav class="navbar  navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          
+          <li><a ><button id = "b1" class=btn title=""> Night Sky 1</button></a></li>
+          <li><a ><button id = "b2" class=btn title=""> Night Sky 2</button></a></li>
+          <li><a ><button id = "b3" class=btn title=""> Ant Line </button></a></li>
+   
+          
+        </ul>
+       
+
+      </div> 
+    </div>
+  </nav>
+</header>
+<!-- Add your site or app content here -->
+  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/nocheEstrellada.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="hero-full-wrapper">
+
+            <div class="text-content">
+
+              <h1 id="welcome">Welcome!<br>
+                <span id="typed-strings">
+                  <span>Please select a video</span>
+                  <span>from the menu above </span>
+                  
+                </span>
+                <span id="typed"></span>
+
+              </h1>
+              <p id = "dropzone" class=btn title="" > or drop your own video here </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     type();
+     movingBackgroundImage();
+  });
+</script>
+
+
+<script type="text/javascript" src="./main.70a66962.js"></script></body>
+
+</html>

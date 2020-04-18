@@ -118,7 +118,7 @@ function setup() {
   //canvas centered in x 
 
   canvasVOffset = windowHeight / 10;
-  c = createCanvas(3*windowWidth/6, 3 * windowHeight/6); // we need some space...
+  c = createCanvas(3*windowWidth/4, 3 * windowHeight/4); // we need some space...
   c.position(windowWidth/2 - width/2,canvasVOffset);
   
   
@@ -400,7 +400,7 @@ function draw() {
    
 
     //myVida.drawBlobs(0, 0);
-    myVida.drawActiveZones(0, 0);
+    
     fill(255,230,0);
     stroke(0,0,255);
     strokeWeight(2);
@@ -408,6 +408,8 @@ function draw() {
 
     ellipse(linePoint1[0],linePoint1[1],20,20);
     ellipse(linePoint2[0],linePoint2[1],20,20);
+
+    myVida.drawActiveZones(0, 0);
 
 
   }
