@@ -136,7 +136,7 @@ function setup() {
 
   
   dropzone = select('#dropzone');
-  dropzone.position(c.position().x ,windowHeight - 60);
+  //dropzone.position(c.position().x ,windowHeight - 60);
   dropzone.dragOver(highlight);
   dropzone.dragLeave(unhighlight);
   dropzone.drop(gotFile,unhighlight);
@@ -347,7 +347,7 @@ function draw() {
     }
     c.show();
     c.position(windowWidth/2 - c.width/2 ,windowHeight/2 - c.height/2);
-   dropzone.position(c.position().x ,windowHeight - 60);
+   dropzone.position(windowWidth/2 - dropzone.width /2 ,windowHeight - 60);
 
     t1.remove();
     background(0, 0, 255);
