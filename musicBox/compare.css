@@ -4366,7 +4366,7 @@ tbody.collapse.in {
 @media (min-width:768px) {
     .navbar-nav {
          display: block;
- /*! margin-left: auto; */
+  margin-left: auto;
   margin-right: auto;
   width: 80%;
     }
@@ -6180,15 +6180,6 @@ textarea {
 .list-icons li {
     float: left;
     margin-right: 5px
-}
-
-.blink_me {
-  animation: blinker 1s linear infinite;
-  color: white;
-}
-
-@keyframes blinker {  
-  50% { opacity: 0; }
 }
 
 /*# sourceMappingURL=main.70a66962.map*/

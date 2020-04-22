@@ -121,6 +121,8 @@ function setup() {
   b1 = select('#b1');
   b2 = select('#b2');
   b3 = select('#b3');
+  blink = select('#blink');
+  blink.hide();
   canvasVOffset = windowHeight / 10;
   c = createCanvas(2*windowWidth/3, 2 * windowHeight/3); 
   c.hide();
@@ -337,6 +339,7 @@ function draw() {
     if(!interactionStartedFlag) {
       background(0);
       c.hide();
+      blink.hide();
       push();
       noStroke(); fill(255); textAlign(CENTER, CENTER);
       text('Select one of the videos above to start', width / 2, height / 2);
@@ -348,7 +351,6 @@ function draw() {
     c.show();
     c.position(windowWidth/2 - c.width/2 ,windowHeight/2 - c.height/2);
    dropzone.position(windowWidth/2 - dropzone.width /2 ,windowHeight - 60);
-
     t1.remove();
     background(0, 0, 255);
     textSize(32);
@@ -403,7 +405,8 @@ function draw() {
     pop();
     myVida.drawActiveZones(0, 0);
 
-
+    blink.show();
+    blink.position(c.position().x ,c.position().y + c.height);
   }
   else {
     /*
