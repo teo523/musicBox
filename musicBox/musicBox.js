@@ -226,7 +226,7 @@ function setup() {
       oscillator that generates a sinusoidal waveform and places the oscillator
       in the synth array.
     */
-    var osc = new p5.Oscillator('sine');
+    var osc = new p5.Noise();
     
     /*
       Let's assume that each subsequent oscillator will play 4 halftones higher
@@ -236,8 +236,21 @@ function setup() {
       to you, you can ignore this part or access additional information, e.g.
       here: https://en.wikipedia.org/wiki/MIDI_tuning_standard
     */
-    osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
-    osc.amp(0.0); osc.start();
+    //osc.freq(240.0 * Math.pow(2.0, (30 + (i * 4) - 69.0) / 12.0));
+    //osc.amp(0.0); 
+
+osc.disconnect();
+var filter = new p5.LowPass();
+osc.connect(filter);
+
+let freq = 400.0 * Math.pow(1.3, (30 + (i * 4) - 69.0) / 12.0);
+  freq = constrain(freq, 0, 22050);
+  filter.freq(freq);
+  // give the filter a narrow band (lower res = wider bandpass)
+  filter.res(30);
+
+
+    //osc.start();
     synth[i] = osc;
 
   }
@@ -248,7 +261,7 @@ function setup() {
 
 function button1() {
   console.log('unmuted2');
-  myVideo = createVideo('Paranal.mp4');
+  myVideo = createVideo('NightSky1.mp4');
   if(!interactionStartedFlag) safeStartVideo();
   myVideo.size(c.width,c.height);
     // workaround for browser autoplay restrictions
@@ -266,7 +279,7 @@ function button1() {
 
 function button2(){
 
-  myVideo = createVideo('Paranal2.mp4');
+  myVideo = createVideo('Planets.mp4');
   if(!interactionStartedFlag) safeStartVideo();
   myVideo.size(c.width,c.height);
     // workaround for browser autoplay restrictions
@@ -390,7 +403,7 @@ function draw() {
 
     //myVida.drawBlobs(0, 0);
     
-    fill(255,230,0);
+    noFill();
     stroke(0,0,255);
     strokeWeight(2);
     line(linePoint1[0],linePoint1[1],linePoint2[0],linePoint2[1]);
@@ -488,8 +501,8 @@ function onActiveZoneChange(_vidaActiveZone) {
   
 
   synth[_vidaActiveZone.id].start();
-  synth[_vidaActiveZone.id].amp(0.1 * _vidaActiveZone.isMovementDetectedFlag,0.1);
-  synth[_vidaActiveZone.id].amp(0,0.5);
+  synth[_vidaActiveZone.id].amp(0.2 * _vidaActiveZone.isMovementDetectedFlag,0.2);
+  synth[_vidaActiveZone.id].amp(0,1);
   //synth[_vidaActiveZone.id].amp(0,1);
  
   //synth[_vidaActiveZone.id].freq(initialFreq,0.1);

@@ -701,9 +701,9 @@ p5.prototype.Vida.prototype.drawActiveZones = function(_x, _y, _w, _h) {
     // draw zone rect (filled if movement detected)
     this.__sketch.strokeWeight(1);
     if(this.activeZones[i].isEnabledFlag) {
-      this.__sketch.stroke(255, 0, 0);
+      this.__sketch.stroke(255, 255, 200);
       if(this.activeZones[i].isMovementDetectedFlag){
-        this.__sketch.fill(255, 0, 0, 128);
+        this.__sketch.fill(255, 255, 255, 128);
       //modified for just draw activated zones
       this.__sketch.ellipse(temp_coord_x, temp_coord_y, temp_coord_w, temp_coord_h);}
       else
